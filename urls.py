@@ -9,4 +9,6 @@ urlpatterns = patterns('main.views.public',
 
 urlpatterns += patterns('',
   url(r'^admin/', include(admin.site.urls)),
+  (r'^public/(?P<path>.*)$', 'django.views.static.serve',
+    {'document_root': settings.STATIC_ROOT }),
 )
