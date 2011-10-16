@@ -16,4 +16,4 @@
 cache
 logs
 dev.db
-site_media/CACHE
+public/CACHE
