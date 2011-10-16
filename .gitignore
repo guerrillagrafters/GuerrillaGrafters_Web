@@ -13,7 +13,6 @@
 .hg
 .hgignore
 .DS_Store
-settings.py
 cache
 logs
 dev.db
