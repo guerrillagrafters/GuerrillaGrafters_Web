@@ -10,11 +10,14 @@ ADMINS = (
 MANAGERS = ADMINS
 
 DATABASES = {
-    'default': {
-         'ENGINE': 'django.contrib.gis.db.backends.postgis',
-         'NAME': 'jesse_ggdb',
-         'USER': 'jesse_ggdb',
-     }
+  'default': {
+     'ENGINE': 'django.contrib.gis.db.backends.postgis',
+     'NAME': 'guerrilla_grafters_staging',
+     'USER': 'guerrilla_grafters_staging',
+     'PASSWORD': 'password',
+     'HOST': 'localhost',
+     'PORT': '5432',
+  }
 }
 
 # Local time zone for this installation. Choices can be found here:
@@ -97,7 +100,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
 )
 
-ROOT_URLCONF = 'web.urls'
+ROOT_URLCONF = 'urls'
 
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
