@@ -3,9 +3,45 @@
 {% block title %}Welcome to Guerrilla Grafters{% endblock %}
 
 {% block headtags %}
+  <script type="text/javascript" language="javascript" src="{{ STATIC_URL }}js/jquery.dropdownPlain.js"></script>
 {% endblock %}
 
 
 {% block content %}
-Welcome to Guerrilla Grafters.
+<div class="wrap">
+	<div class="upper">
+		<ul class="dropdown">
+      <li>
+        <a href="#">CARE</a>
+        <ul class="sub_menu">
+           <li><a href="#">Care for the trees.</a></li>
+           <li><a href="#">Care for the grafts</a></li>
+           <li><a href="#">Tips</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">SHARE</a>
+        <ul class="sub_menu">
+          <li><a href="#">Gleaning</a></li>
+          <li><a href="#">Add a Tree to The Map</a></li>
+          <li><a href="#">Workshops</a></li>
+          <li><a href="#">Neighborhood</a></li>		 
+        </ul>
+      </li>
+      <li>
+        <a href="#">DARE</a>
+        <ul class="sub_menu">
+           <li><a href="#">Add a graft</a></li>
+           <li><a href="#">Find a grafting team</a></li>
+        </ul>
+      </li>
+    </ul>	
+    <div class="signup">login <hr /> sign-up</div>
+	</div>
+	<div class="logo_house">
+		<div class="logo">
+			<div class="tagline">Undoing civilization one branch at a time ....</div>
+		</div>
+	</div>
+</div>
 {% endblock %}
