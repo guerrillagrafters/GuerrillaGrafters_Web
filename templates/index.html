@@ -8,14 +8,51 @@
 
 {% block content %}
 
-<h1>Home</h1>
 {% if user.is_authenticated %}
   <p> Welcome, {{ user.first_name }}. </p>
   <a href="{% url django.contrib.auth.views.logout %}">Log out</a>
 {% else %}
-  <a href="{% url main.views.public.register %}">Register</a>
-  <br>
-  <a href="{% url django.contrib.auth.views.login %}">Log in</a>
+  <p>
+    <a href="{% url main.views.public.register %}">Register</a> | 
+    <a href="{% url django.contrib.auth.views.login %}">Log in</a>
+  </p>
 {% endif %}
+
+<div class="wrap">
+<div class="header">
+	<div class="upper">
+		<ul class="dropdown">
+        	<li><a href="#">CARE</a>
+        		<ul class="sub_menu">
+        			 <li><a href="#">Care for the trees.</a></li>
+        			 <li><a href="#">Care for the grafts</a></li>
+        			 <li><a href="#">Tips</a></li>
+        		</ul>
+        	</li>
+        	<li><a href="#">SHARE</a>
+        		<ul class="sub_menu">
+        			<li><a href="#">Gleaning</a></li>
+        			<li><a href="#">Add a Tree to The Map</a></li>
+        			 <li><a href="#">Workshops</a></li>
+        			 <li><a href="#">Neighborhood</a></li>		 
+        		</ul>
+        	</li>
+        	<li><a href="#">DARE</a>
+        		<ul class="sub_menu">
+        			 <li><a href="#">Add a graft</a></li>
+        			 <li><a href="#">Find a grafting team</a></li>
+
+        		</ul>
+        	</li>
+          </ul>	
+          <div class="signup">login <hr /> sign-up</div>
+	</div>
+	<div class="logo_house">
+		<div class="logo">
+			<div class="tagline">Undoing civilization one branch at a time ....</div>
+		</div>
+	</div>
+</div>
+</div>
 
 {% endblock %}
