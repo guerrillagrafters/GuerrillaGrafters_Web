@@ -13,7 +13,7 @@
   <p> Welcome, {{ user.first_name }}. </p>
   <a href="{% url django.contrib.auth.views.logout %}">Log out</a>
 {% else %}
-  <a href="{% url main.views.register %}">Register</a>
+  <a href="{% url main.views.public.register %}">Register</a>
   <br>
   <a href="{% url django.contrib.auth.views.login %}">Log in</a>
 {% endif %}
