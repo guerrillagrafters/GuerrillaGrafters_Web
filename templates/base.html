@@ -9,7 +9,11 @@
 
   {% compress css %}
   <link rel="stylesheet" type="text/css" href="/public/css/reset.css" media="screen" />
-  <link rel="stylesheet" type="text/x-scss" href="/public/css/styles.scss" charset="utf-8" media="screen" />
+  <link rel="stylesheet" type="text/x-scss" href="/public/css/styles.scss" charset="utf-8" media="only screen and (min-width: 481px)" />
+  <link rel="stylesheet" type="text/css" href="/public/css/menu_style.css" media="screen, projection"/>
+  <!--[if lte IE 7]>
+    <link rel="stylesheet" type="text/css" href="/public/css/menu_ie.css" media="screen" />
+  <![endif]-->
   {% endcompress %}
   
   <script type="text/javascript" src="public/js/jquery-1.3.1.min.js"></script>	
