@@ -115,6 +115,14 @@ TEMPLATE_DIRS = (
     "templates"
 )
 
+AUTH_PROFILE_MODULE = 'main.UserProfile'
+
+AUTHENTICATION_BACKENDS = (
+    'main.backends.EmailBackend',
+    'django.contrib.auth.backends.ModelBackend'
+)
+
+
 INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
