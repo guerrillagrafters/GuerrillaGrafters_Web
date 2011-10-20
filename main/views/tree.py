@@ -37,9 +37,7 @@ def add_tree(request):
       tree.geom.transform(4326)
       pnt = GEOSGeometry(tree.geom.wkt) # WKT
       tree_points.append(pnt)
-    c.update(dict(points=tree_points))
-    log.info(c)
-  return render_to_response("add_tree.html", {'form' : form}, RequestContext(request))
+  return render_to_response("add_tree.html", {'form' : form, 'points' : tree_points}, RequestContext(request))
 
 
 def index(request):
