@@ -6,8 +6,8 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js" type="text/javascript"></script>
 	<script src="/public/js/jquery.ui.widget.js" type="text/javascript"></script>
 	<script src="/public/js/jquery.smoothDivScroll-1.1-min.js" type="text/javascript"></script>
-	<script type="text/javascript" language="javascript" src="/public/js/jquery.dropdownPlain.js"></script>
-	<script src="/public/js/popup.js" type="text/javascript"></script>
+	<script src="/public/js/jquery.dropdownPlain.js" type="text/javascript"></script>
+	<script src="/public/js/jquery.reveal.js" type="text/javascript"></script>
 	<script type="text/javascript">
 	$(window).load(function() {
 		$("div#makeMeScrollable").smoothDivScroll({ 
@@ -59,31 +59,19 @@
         		</ul>
         	</li>
           </ul>	
-          <div class="signup"><a href="{% url django.contrib.auth.views.login %}">log in</a> <hr /><a href="{% url main.views.public.register %}">register</a></div>
+          <div class="signup">
+            <a href="{% url django.contrib.auth.views.login %}" data-reveal-id="registrationForm" data-animation="fade">log in</a> <hr />
+            <a href="{% url main.views.public.register %}" data-reveal-id="registrationForm" data-animation="fade">register</a>
+          </div>
 
-		<!-- this is bad pop-up code i wrote it goes with popup.js and css styles at the bottom of styles.scss -->
-		 <div id="button"><a href="">lala </a></div>
+    <div id="registrationForm" class="reveal-modal">
+      <form action="" method="post"> {% csrf_token %}
+          {{ form.as_p }}
+          <input type="submit" value="Create the account">
+      </form>
+      <a class="close-reveal-modal">&#215;</a>
+    </div>
 
-			<div id="popupContact">
-				<div id="bg_branch">
-				<a id="popupContactClose">x</a>
-				<h1>Create an account</h1>
-				<p id="contactArea">
-					<form action"">
-						<p><label for="id_first_name">First name:</label> <input type="text" name="first_name" id="id_first_name" /></p>
-						<p><label for="id_last_name">Last name:</label> <input type="text" name="last_name" id="id_last_name" /></p>
-						<p><label for="id_email">Email:</label> <input type="text" name="email" id="id_email" /></p>
-						<p><label for="id_email2">Email confirmation:</label> <input type="text" name="email2" id="id_email2" /> <span class="helptext">Enter the same email as above, for verification.</span></p>
-						<p><label for="id_password1">Password:</label> <input type="password" name="password1" id="id_password1" /></p>
-						<p><label for="id_password2">Password confirmation:</label> <input type="password" name="password2" id="id_password2" /> <span class="helptext">Enter the same password as above, for verification.</span><input type="hidden" name="username" id="id_username" /></p>
-						<input type="submit" value="enter" id="popupSubmit" />
-					</form>
-				</p>
-				</div>
-			</div>
-			<div id="backgroundPopup"></div>
-			
-			<!-- end bad pop-up code -->
 	</div>
 	<div class="logo_house">
 		<div class="logo">

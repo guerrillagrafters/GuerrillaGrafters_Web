@@ -8,10 +8,10 @@ from main.forms import *
 from django.contrib.auth import authenticate, login
 
 def index(request):
-    return render_to_response("index.html", {}, RequestContext(request))
+    form = CustomUserCreationForm()
+    return render_to_response("index.html", {'form': form}, RequestContext(request))
 
 def register(request):
-    print request.POST
     csrfContext = RequestContext(request)
     if request.method == 'POST':
         form = CustomUserCreationForm(request.POST)
