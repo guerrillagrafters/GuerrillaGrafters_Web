@@ -76,3 +76,28 @@ p     	 { margin: 15px 0; }
   margin: 0 auto;
   width: 800px;
 }
+
+#registrationForm{
+    width: 300px;
+}
+
+/* Make each field container relative.
+This lets us position the label absolutely inside it. */
+#registrationForm p {
+	position:relative;
+}
+ 
+/* Position the labels inside our input fields. */
+#registrationForm label {
+	position:absolute;
+	top:5px;
+	left:9px;
+	color:#aaa;
+}
+
+#registrationForm input {
+	width:280px;
+	padding:5px;
+	margin-bottom:10px;
+	@include border-radius(15px)
+}

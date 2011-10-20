@@ -5,11 +5,10 @@ from main.models import UserProfile
 
 
 class CustomUserCreationForm(UserCreationForm):
-    first_name = forms.CharField(label = "First name")
-    last_name = forms.CharField(label = "Last name")
-    email = forms.EmailField(label = "Email")
-    email2 = forms.EmailField(label = "Email confirmation",
-                              help_text = "Enter the same email as above, for verification.")
+    first_name = forms.CharField(label = "First Name")
+    last_name = forms.CharField(label = "Last Name")
+    email = forms.EmailField(label = "email address")
+    email2 = forms.EmailField(label = "confirm email address")
     username = forms.CharField(widget=forms.HiddenInput, required=False)
     
     def clean_username(self):

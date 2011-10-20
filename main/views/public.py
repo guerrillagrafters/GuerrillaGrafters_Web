@@ -8,13 +8,13 @@ from main.forms import *
 from django.contrib.auth import authenticate, login
 
 def index(request):
-    form = CustomUserCreationForm()
+    form = CustomUserCreationForm(label_suffix='')
     return render_to_response("index.html", {'form': form}, RequestContext(request))
 
 def register(request):
     csrfContext = RequestContext(request)
     if request.method == 'POST':
-        form = CustomUserCreationForm(request.POST)
+        form = CustomUserCreationForm(request.POST, label_suffix='')
         if form.is_valid():
             new_user = form.save()
             new_user = authenticate(username=new_user.username,
@@ -22,7 +22,7 @@ def register(request):
             login(request, new_user)
             return HttpResponseRedirect("/")
     else:
-        form = CustomUserCreationForm()
+        form = CustomUserCreationForm(label_suffix='')
     return render_to_response("registration/register.html", {
         'form': form,
     }, csrfContext)
