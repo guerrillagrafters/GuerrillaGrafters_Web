@@ -13,6 +13,10 @@ urlpatterns = patterns('main.views.public',
   (r'^accounts/logout/$', logout),
 )
 
+urlpatterns += patterns('main.views.tree',
+  (r'^add_tree/$', 'add_tree'),
+)
+
 urlpatterns += patterns('',
   url(r'^admin/', include(admin.site.urls)),
   (r'^public/(?P<path>.*)$', 'django.views.static.serve',
