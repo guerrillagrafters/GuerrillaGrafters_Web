@@ -3,6 +3,7 @@ from django import forms
 from django.contrib.auth.models import User
 from main.models import UserProfile
 
+
 class CustomUserCreationForm(UserCreationForm):
     first_name = forms.CharField(label = "First name")
     last_name = forms.CharField(label = "Last name")
@@ -50,3 +51,18 @@ class CustomUserCreationForm(UserCreationForm):
     class Meta:
         model = User
         fields = ("first_name", "last_name", "email", "email2")
+
+        
+
+        
+class AddTreeForm(forms.Form):
+  address = forms.CharField(label="Nearest street address")
+  species = forms.CharField(label="Select species of tree (optional)")
+  variety = forms.CharField(label="Select variety (optional)")
+  age = forms.IntegerField(min_value=0, required=False, label="Approximate age of tree")
+  height = forms.IntegerField(min_value=0, required=False, label="Approximate height of tree")
+  condiiton = forms.IntegerField(min_value=0, label="Condition of tree")
+  steward = forms.ChoiceField(choices=[(x,x) for x in ["Yes","No","Maybe"]], widget=forms.RadioSelect, label="Will you steward the tree?")
+  track = forms.ChoiceField(choices=[(x,x) for x in ["Yes","No"]], widget=forms.RadioSelect, label="Do you want to be able to track your submission?")
+  
+  

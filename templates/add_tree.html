@@ -1,20 +1,60 @@
 {% extends "base.html" %}
 
+{% block headtags %}
+<link rel="stylesheet" href="http://openlayers.org/dev/theme/default/style.css" type="text/css">
+<link rel="stylesheet" href="http://openlayers.org/dev/examples/style.css" type="text/css">
+
+<!-- start leaflet (map css & js ref) -->
+<link rel="stylesheet" href="/public/leaflet/leaflet.css" />	
+<!--[if lte IE 8]><link rel="stylesheet" href="public/leaflet/leaflet.ie.css" /><![endif]-->
+<script src="/public/leaflet/leaflet.js"></script>
+<!-- end leaflet -->  
+
+
+<script type="text/javascript" src="http://openlayers.org/api/2.8/OpenLayers.js"></script>
+<script type="text/javascript" src="http://openstreetmap.org/openlayers/OpenStreetMap.js"></script>
+
+<script type="text/javascript" src="/public/js/mapping.js"></script>
+
+<style type="text/css">
+.bigmap {
+    width: 831px;
+    height: 525px;
+    border: 1px solid #ccc;
+}
+#controlToggle li {
+  list-style: none;
+}
+</style>
+
+{% endblock %}
+
 {% block content %}
 
 <!-- width equals available horizontal space by default -->
 <h4>Add a new tree</h4>
+
+<form action="/add_tree/" method="POST">
+  <ul>
+  {{ form.as_ul }}
+  </ul>
+  <input type="submit" value="Submit Tree"/>
+  {% csrf_token %}
+</form>
+
 <h3>Step 1 Specify Placement</h3>
 
 <div id="add_map" style="width: 1023px; height: 500px; margin-top: 10px; margin-bottom: 30px;"></div>
 
 <h3>Step 2 Enter Tree Details</h3>
-<form action="/add/" method="post">
-{% csrf_token %}
+<form action="/add_tree/" method="post">
+
 <div id="latlng_display">
 	<input id="new_tree_lat" type="text" name="lat" value="37.77003627110172" />
 	<input id="new_tree_lon" type="text" name="lon" value="-122.45000839233397"/>
 </div>
+{% csrf_token %}
+
 <input id="new_tree_button" type="submit" value="Add Tree!" />
 </form>
 

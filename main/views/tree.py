@@ -2,6 +2,7 @@ import logging
 from django.http import HttpResponse, HttpResponseRedirect
 from django.template import RequestContext
 from django.shortcuts import render_to_response
+from django.core.context_processors import csrf
 
 from django.contrib.gis.gdal import SpatialReference, CoordTransform
 from django.contrib.gis.geos import Point, GEOSGeometry
@@ -17,28 +18,28 @@ trans = CoordTransform(gcoord, mycoord)
 
 
 def add_tree(request):
-  if request.method == 'POST':
+
+  if request.method == 'POST':  
+    form = AddTreeForm(request.POST)
+    
     lat = request.POST['lat']
     lon = request.POST['lon']
     latlon = (float(lon), float(lat))
     point = Point(latlon, srid=4326).transform(trans, clone=True)
-    tree = Trees(common_name="test tree", geom=point)
+    tree = Tree(common_name="test tree", location=point)
     tree.save()
-    return HttpResponseRedirect('/add/')
+    return HttpResponseRedirect('/add_tree')
   else:
-    c = {}
+    form = AddTreeForm()  
     tree_points = []
-    trees = Trees.objects.all()
+    trees = Tree.objects.all()
     for tree in trees:
       tree.geom.transform(4326)
       pnt = GEOSGeometry(tree.geom.wkt) # WKT
       tree_points.append(pnt)
     c.update(dict(points=tree_points))
-    c.update(csrf(request))
     log.info(c)
-    return render_to_response("sanfran/add_tree.html", c)
-
-  return render_to_response(t.render(rc))
+  return render_to_response("add_tree.html", {'form' : form}, RequestContext(request))
 
 
 def index(request):
