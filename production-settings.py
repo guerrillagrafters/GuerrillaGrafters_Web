@@ -115,6 +115,14 @@ TEMPLATE_DIRS = (
     "templates"
 )
 
+AUTH_PROFILE_MODULE = 'main.UserProfile'
+
+AUTHENTICATION_BACKENDS = (
+    'main.backends.EmailBackend',
+    'django.contrib.auth.backends.ModelBackend'
+)
+
+
 INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -122,6 +130,7 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.gis',
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
