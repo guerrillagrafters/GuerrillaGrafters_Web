@@ -1,6 +1,6 @@
 <div id="loginAndRegistration" class="reveal-modal medium">
 
-  <form id="authenticationForm" action="accounts/login/?next={{request.path}}" method="post"> {% csrf_token %}
+  <form id="authenticationForm" action="accounts/login/?next=/" method="post"> {% csrf_token %}
       {{ authenticationForm.as_p }}
       <input type="submit" value="Log In">
   </form>

@@ -52,7 +52,7 @@
           <div class="signup">
             {% if user.is_authenticated %}
               Welcome, {{ user.first_name }}
-              <a id="logout_link" href="{% url django.contrib.auth.views.logout %}?next={{request.path}}">Log out</a>            
+              <a id="logout_link" href="{% url django.contrib.auth.views.logout %}?next=/">Log out</a>            
             {% else %}
               <a href="#" data-reveal-id="loginAndRegistration" data-animation="fade">log in | register</a>
             {% endif %}
