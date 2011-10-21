@@ -3,11 +3,8 @@
 {% block title %}Welcome to Guerrilla Grafters{% endblock %}
 
 {% block headtags %}
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js" type="text/javascript"></script>
-	<script src="/public/js/jquery.ui.widget.js" type="text/javascript"></script>
 	<script src="/public/js/jquery.smoothDivScroll-1.1-min.js" type="text/javascript"></script>
 	<script src="/public/js/jquery.dropdownPlain.js" type="text/javascript"></script>
-	<script src="/public/js/jquery.reveal.js" type="text/javascript"></script>
 	<script type="text/javascript">
 	$(window).load(function() {
 		$("div#makeMeScrollable").smoothDivScroll({ 
@@ -18,30 +15,12 @@
 			startAtElementId: "startAtMe", 
 			visibleHotSpots: "always"
 		});
-	});
-	
-	$(document).ready(function(){
-  	$("#registrationForm input")
-  		.bind("focus.labelFx", function(){
-  			$(this).prev().hide();
-  		})
-  		.bind("blur.labelFx", function(){
-  			$(this).prev()[!this.value ? "show" : "hide"]();
-  		})
-  		.trigger("blur.labelFx");
-  });
+	});	
 </script>
 {% endblock %}
 
 
 {% block content %}
-
-{% if user.is_authenticated %}
-  <p> Welcome, {{ user.first_name }}. </p>
-  <a href="{% url django.contrib.auth.views.logout %}">Log out</a>
-{% else %}
-
-{% endif %}
 
 <div class="wrap">
 <div class="header">
@@ -71,17 +50,13 @@
         	</li>
           </ul>	
           <div class="signup">
-            <a href="{% url django.contrib.auth.views.login %}" data-reveal-id="registrationForm" data-animation="fade">log in</a> <hr />
-            <a href="{% url main.views.public.register %}" data-reveal-id="registrationForm" data-animation="fade">register</a>
+            {% if user.is_authenticated %}
+              Welcome, {{ user.first_name }}
+              <a id="logout_link" href="{% url django.contrib.auth.views.logout %}?next={{request.path}}">Log out</a>            
+            {% else %}
+              <a href="#" data-reveal-id="loginAndRegistration" data-animation="fade">log in | register</a>
+            {% endif %}
           </div>
-
-    <div id="registrationForm" class="reveal-modal medium">
-      <form action="register/" method="post"> {% csrf_token %}
-          {{ form.as_p }}
-          <input type="submit" value="Submit">
-      </form>
-      <a class="close-reveal-modal">&#215;</a>
-    </div>
 
 	</div>
 	<div class="logo_house">
@@ -117,5 +92,7 @@
 		<!-- end bad slideshow -->
 	</div>
 </div>
+
+{% include 'registration/login_and_registration_modal.html' %}
 
 {% endblock %}

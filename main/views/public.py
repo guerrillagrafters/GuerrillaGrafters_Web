@@ -5,11 +5,14 @@ from django.contrib.auth.forms import UserCreationForm
 from django.template import RequestContext
 from django.shortcuts import render_to_response
 from main.forms import *
+from django.contrib.auth.forms import *
 from django.contrib.auth import authenticate, login
 
 def index(request):
-    form = CustomUserCreationForm(label_suffix='')
-    return render_to_response("index.html", {'form': form}, RequestContext(request))
+    authenticationForm = CustomAuthenticationForm(label_suffix='')
+    registrationForm = CustomUserCreationForm(label_suffix='')
+    
+    return render_to_response("index.html", {'authenticationForm': authenticationForm, 'registrationForm': registrationForm}, RequestContext(request))
 
 def register(request):
     csrfContext = RequestContext(request)
@@ -24,5 +27,5 @@ def register(request):
     else:
         form = CustomUserCreationForm(label_suffix='')
     return render_to_response("registration/register.html", {
-        'form': form,
+        'registrationForm': form,
     }, csrfContext)

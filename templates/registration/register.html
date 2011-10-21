@@ -3,10 +3,8 @@
 {% block title %}Create an account with the Guerrilla Grafters!{% endblock %}
 
 {% block content %}
-  <h1>Create an account</h1>
-
-  <form action="" method="post"> {% csrf_token %}
-      {{ form.as_p }}
-      <input type="submit" value="Submit">
+  <form id="registrationForm" action="" method="post"> {% csrf_token %}
+      {{ registrationForm.as_p }}
+      <input type="submit" value="Sign Up">
   </form>
 {% endblock %}

@@ -1,4 +1,4 @@
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django import forms
 from django.contrib.auth.models import User
 from main.models import UserProfile
@@ -7,13 +7,13 @@ from main.models import UserProfile
 class CustomUserCreationForm(UserCreationForm):
     first_name = forms.CharField(label = "First Name")
     last_name = forms.CharField(label = "Last Name")
-    email = forms.EmailField(label = "email address")
-    email2 = forms.EmailField(label = "confirm email address")
+    email = forms.EmailField(label = "Email address")
+    email2 = forms.EmailField(label = "Confirm email address")
+    password2 = forms.CharField(label = "Password confirmation", widget=forms.PasswordInput)
     username = forms.CharField(widget=forms.HiddenInput, required=False)
     
     def clean_username(self):
-            "This function is required to overwrite an inherited username clean"
-            return self.cleaned_data['username']
+        return self.cleaned_data['username']
         
     def clean_email2(self):
         if self.cleaned_data.get("email2", '') != self.cleaned_data.get("email", ''):
@@ -41,8 +41,8 @@ class CustomUserCreationForm(UserCreationForm):
         if not self.errors:
             generated_username = self.cleaned_data['email'].split('@',1)[0][:25]
             c = User.objects.filter(username = generated_username).count()
-            if c > 1:
-                generated_username += c
+            if c >= 1:
+                generated_username += str(c)
             self.cleaned_data['username'] = generated_username
         super(CustomUserCreationForm, self).clean()
         return self.cleaned_data
@@ -51,8 +51,8 @@ class CustomUserCreationForm(UserCreationForm):
         model = User
         fields = ("first_name", "last_name", "email", "email2")
 
-        
-
+class CustomAuthenticationForm(AuthenticationForm):
+    username = forms.CharField(label="Email", max_length=30)
         
 class AddTreeForm(forms.Form):
   address = forms.CharField(label="Nearest street address")

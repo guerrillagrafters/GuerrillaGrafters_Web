@@ -38,11 +38,8 @@ p     	 { margin: 15px 0; }
 }
 
 .signup {
-  margin: 12px 0 0 492px;
-  width: 48px;
-  height: 30px;
-  position: relative;
-  float: left;
+  margin: 24px;
+  float: right;
 }
 
 .slideshow{
@@ -77,25 +74,33 @@ p     	 { margin: 15px 0; }
   width: 800px;
 }
 
-#registrationForm{
+#logout_link{
+    font-size: 10px;
+}
+
+#loginAndRegistration{
     width: 300px;
 }
 
-/* Make each field container relative.
-This lets us position the label absolutely inside it. */
-#registrationForm p {
+form p {
 	position:relative;
+	margin: 0px;
+}
+
+form .errorlist, .error {
+    font-size: 12px;
+    color: red;
 }
  
 /* Position the labels inside our input fields. */
-#registrationForm label {
+form label {
 	position:absolute;
 	top:5px;
 	left:9px;
 	color:#aaa;
 }
 
-#registrationForm input {
+form input {
 	width:280px;
 	padding:5px;
 	margin-bottom:10px;
