@@ -1,7 +1,7 @@
 /* 
 	LEVEL ONE
 */
-ul.dropdown                         { position: relative; font-size:21px; height:18px; width:260px;borderx:1px solid red;float:left; margin: 24px 10px;}
+ul.dropdown                         { position: relative; font-size:21px; height:18px; width:260px;borderx:1px solid red;float:left; margin: 24px 0px;}
 ul.dropdown li                      { font-weight: bold; float: left; zoom: 1; background: #fff; }
 ul.dropdown a:hover		            { color: #000; }
 ul.dropdown a:active                { color: #000; }

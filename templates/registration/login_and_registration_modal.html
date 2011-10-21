@@ -1,0 +1,14 @@
+<div id="loginAndRegistration" class="reveal-modal medium">
+
+  <form id="authenticationForm" action="accounts/login/?next=/" method="post"> {% csrf_token %}
+      {{ authenticationForm.as_p }}
+      <input type="submit" value="Log In">
+  </form>
+
+  <form id="registrationForm" action="/register/" method="post"> {% csrf_token %}
+      {{ registrationForm.as_p }}
+      <input type="submit" value="Sign Up">
+  </form>
+  
+  <a class="close-reveal-modal">&#215;</a>
+</div>
