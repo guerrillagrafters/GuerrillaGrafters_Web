@@ -3,7 +3,7 @@
 {% block title %}Create an account with the Guerrilla Grafters!{% endblock %}
 
 {% block content %}
-  <form id="registrationForm" action="" method="post"> {% csrf_token %}
+  <form id="registrationForm" class="bubbleform" action="" method="post"> {% csrf_token %}
       {{ registrationForm.as_p }}
       <input type="submit" value="Sign Up">
   </form>
