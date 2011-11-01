@@ -83,25 +83,25 @@ p     	 { margin: 15px 0; }
     width: 300px;
 }
 
-form p {
+form.bubbleform p {
 	position:relative;
 	margin: 0px;
 }
 
-form .errorlist, .error {
+form.bubbleform .errorlist, .error {
     font-size: 12px;
     color: red;
 }
  
 /* Position the labels inside our input fields. */
-form label {
+form.bubbleform label {
 	position:absolute;
 	top:5px;
 	left:9px;
 	color:#aaa;
 }
 
-form input {
+form.bubbleform input {
 	width:280px;
 	padding:5px;
 	margin-bottom:10px;
