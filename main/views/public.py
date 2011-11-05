@@ -13,6 +13,9 @@ def index(request):
     registrationForm = CustomUserCreationForm(label_suffix='')
     
     return render_to_response("index.html", {'authenticationForm': authenticationForm, 'registrationForm': registrationForm}, RequestContext(request))
+    
+def blog(request):
+    return render_to_response("blog.html", {}, RequestContext(request))
 
 def register(request):
     csrfContext = RequestContext(request)
