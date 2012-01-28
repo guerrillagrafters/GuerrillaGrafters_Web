@@ -107,3 +107,7 @@ form.bubbleform input {
 	margin-bottom:10px;
 	@include border-radius(15px)
 }
+
+li[href=#] {
+  color:#CCCCCC;
+}
