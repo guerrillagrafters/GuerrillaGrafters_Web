@@ -14,6 +14,9 @@ def index(request):
     
     return render_to_response("index.html", {'authenticationForm': authenticationForm, 'registrationForm': registrationForm}, RequestContext(request))
 
+def news(request):	
+	return render_to_response("news.html", {}, RequestContext(request))
+
 def register(request):
     csrfContext = RequestContext(request)
     if request.method == 'POST':
@@ -24,8 +27,8 @@ def register(request):
                                     password=request.POST['password1'])
             login(request, new_user)
             return HttpResponseRedirect("/")
-    else:
-        form = CustomUserCreationForm(label_suffix='')
+	else:
+		form = CustomUserCreationForm(label_suffix='')
     return render_to_response("registration/register.html", {
-        'registrationForm': form,
+       'registrationForm': form,
     }, csrfContext)

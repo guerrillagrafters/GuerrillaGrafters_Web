@@ -10,6 +10,7 @@ a	  	 { text-decoration: none;color:#EC008C; }
 a:visited{color:#EC008C}
 h2 		 {font-size:18px; color: #333;}
 ul    	 { list-style: none; }
+.indent { margin: 0 90px 10px 30px;}
 p     	 { margin: 15px 0; }
 
 .bottom-half{
@@ -59,6 +60,10 @@ p     	 { margin: 15px 0; }
 .text-content{
 	width:275px;height:300px; float:left;padding: 8px;
 }
+.text-content-2{
+	width:800px;height:100%; float:left;
+}
+
 
 .text-content p{
 	color: #555;
@@ -107,3 +112,73 @@ form.bubbleform input {
 	margin-bottom:10px;
 	@include border-radius(15px)
 }
+
+ /* --- viewport configuration ---------------------------------------------------------- */
+    .viewport {
+        borderx: 3px solid #eee;
+        float: left;
+        height: 150px;
+        margin: 0 4.5px 9px 4.5px;
+        overflow: hidden;
+        position: relative;
+        width: 250px;
+    }
+
+    /* This is so that the 2nd thumbnail in each row fits snugly. You will want to add a similar
+       class to the last thumbnail in each row to get rid of the margin-right. */
+    .no-margin {
+        margin-right: 0;
+    }
+
+	.marginleft {
+		margin-left:9px;
+	}
+
+    /* --- Link configuration that contains the image and label ----------------------------- */
+    .viewport a {
+        display: block;
+        position: relative;
+    }
+
+    .viewport a img {
+        left: -0;
+        position: relative;
+        top: -0;
+        width: 250px;
+		height: 150px;
+    }
+
+    /* --- Label configuration -------------------------------------------------------------- */
+    .viewport a span {
+        display: none;
+        font-size: .8em;
+        height: 100%;
+        padding-top: 65px;
+        position: absolute;
+        text-align: center;
+        text-decoration: none;
+        width: 100%;
+        z-index: 100;
+    }
+        .viewport a span em {
+            display: block;
+            font-size: 0.45em;
+            font-weight: normal;
+        }
+
+    /* --- Dark hover background ------------------------------------------------------------ */
+    .dark-background {
+        background-color: rgba(15, 15, 15, 0.6);
+        color: #fff;
+        text-shadow: #000 0px 0px 0px;
+    }
+        .dark-background em {
+            color: #ccc;
+        }
+
+  
+
+    /**
+     * You could create multiple hover background classes for different looks depending on the
+     * image type. Use your imagination!
+     */
