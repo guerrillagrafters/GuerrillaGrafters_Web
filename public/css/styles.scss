@@ -113,6 +113,7 @@ form.bubbleform input {
 	@include border-radius(15px)
 }
 
+
  /* --- viewport configuration ---------------------------------------------------------- */
     .viewport {
         borderx: 3px solid #eee;
@@ -182,3 +183,8 @@ form.bubbleform input {
      * You could create multiple hover background classes for different looks depending on the
      * image type. Use your imagination!
      */
+
+/*li[href=#] {
+  color:#CCCCCC;
+}*/
+
