@@ -184,7 +184,18 @@ form.bubbleform input {
      * image type. Use your imagination!
      */
 
-/*li[href=#] {
-  color:#CCCCCC;
-}*/
+ul.sub_menu {
+  li {
+    a[href='#'] {
+      color: red;
+    }
 
+    &:hover {
+      font-weight: bold;
+    }
+  }
+}
+
+ul.dropdown ul li a[href='#'] {
+  color: #ccc;
+}
