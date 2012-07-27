@@ -11,6 +11,10 @@ class UserProfileInline(admin.StackedInline):
 
 admin.site.register(UserProfile)
 
+class TreeAdmin(admin.ModelAdmin):
+  pass
+admin.site.register(Tree, TreeAdmin)
+
 @allowEmptyQuerySetForActions(['export_users'])
 class MyUserAdmin(UserAdmin):
   # form = CustomUserChangeForm
