@@ -144,7 +144,6 @@ INSTALLED_APPS = (
     # 'django.contrib.admindocs',
     'south',
     'main',
-    'compressor'
 )
 
 # A sample logging configuration. The only tangible logging
@@ -170,22 +169,11 @@ LOGGING = {
     }
 }
 
-# Django Compress
-SASS_INCLUDE = os.path.join(SITE_ROOT, 'public/css/sass')
 
 STATICFILES_FINDERS = (
   "django.contrib.staticfiles.finders.FileSystemFinder",
   "django.contrib.staticfiles.finders.AppDirectoriesFinder",
   "compressor.finders.CompressorFinder"
-)
-
-COMPRESS_ENABLED = True
-COMPRESS_MTIME_DELAY = 3
-#COMPRESS_REBUILD_TIMEOUT = 10
-COMPRESS_URL = "/public/"
-COMPRESS_PARSER = "compressor.parser.BeautifulSoupParser"
-COMPRESS_PRECOMPILERS = (
-  ('text/x-scss', 'pyscss -I %s --output={outfile} {infile}' % SASS_INCLUDE),
 )
 
 

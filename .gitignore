@@ -17,3 +17,4 @@ cache
 logs
 dev.db
 public/CACHE
+public/assets/.sass-cache

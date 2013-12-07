@@ -1,4 +1,3 @@
-{% load compress %}
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <html>
@@ -9,9 +8,7 @@
 
   <link rel="stylesheet" href="{{ STATIC_URL }}bootstrap/css/bootstrap.css">
 
-  {% compress css %}  
-  <link rel="stylesheet" type="text/x-scss" href="/public/css/styles.scss" charset="utf-8" media="only screen and (min-width: 481px)" />
-  {% endcompress %}
+  <link rel="stylesheet" type="text/css" href="/public/assets/stylesheets/styles.css" charset="utf-8" media="only screen and (min-width: 481px)" />
   <link rel="stylesheet" type="text/css" href="/public/css/reset.css" media="screen" />
   <link rel="stylesheet" type="text/css" href="/public/css/menu_style.css" media="screen, projection"/>
 
