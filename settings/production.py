@@ -15,8 +15,8 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
-if environ.has_key('DATABASE_URL'):
-    url = urlparse(environ['DATABASE_URL'])
+if environ.has_key('HEROKU_POSTGRESQL_PINK_URL'):
+    url = urlparse(environ['HEROKU_POSTGRESQL_PINK_URL'])
     DATABASES['default'] = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': url.path[1:],
