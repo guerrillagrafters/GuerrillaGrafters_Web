@@ -14,6 +14,8 @@ ADMINS = (
 )
 
 MANAGERS = ADMINS
+DATABASES = {
+}
 
 if environ.has_key('DATABASE_URL'):
     url = urlparse(environ['DATABASE_URL'])
