@@ -4,7 +4,11 @@ from os import environ
 from urlparse import urlparse
 
 DJANGO_ROOT = os.path.dirname(os.path.realpath(django.__file__))
-SITE_ROOT = os.path.dirname(os.path.join('..',os.path.realpath(__file__)))
+SITE_ROOT = os.path.join(
+    os.path.dirname(os.path.realpath(__file__)),
+    os.path.pardir
+)
+
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
