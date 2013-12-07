@@ -1,5 +1,4 @@
 from django.db import models
-#from django.contrib.gis.db import models as geomodels
 from django.contrib.auth.models import User
 from django_fsm.db.fields import FSMField, transition
 
@@ -17,7 +16,6 @@ class Address(models.Model):
       return "%s, %s %s" % (self.address_line1, self.city, self.state_province )
 
 class Location(models.Model):
-  geolocation =  geomodels.PointField(srid=3857, blank=True, null=True)
   address = models.ForeignKey(Address)
   
 class Tree(models.Model):
