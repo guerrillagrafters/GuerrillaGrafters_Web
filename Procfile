@@ -1,1 +1,1 @@
-web: gunicorn guerrillagrafters.wsgi
+web: gunicorn wsgi
