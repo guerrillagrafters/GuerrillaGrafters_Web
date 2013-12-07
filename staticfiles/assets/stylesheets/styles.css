@@ -1,0 +1,275 @@
+@option compress:no;
+/* line 5, ../sass/styles.scss */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 6, ../sass/styles.scss */
+html {
+  height: 100%;
+}
+
+/* line 7, ../sass/styles.scss */
+body {
+  font: 14px Georgia, Serif;
+  height: 100%;
+}
+
+/* line 8, ../sass/styles.scss */
+a {
+  text-decoration: none;
+  color: #EC008C;
+}
+
+/* line 9, ../sass/styles.scss */
+a:visited {
+  color: #EC008C;
+}
+
+/* line 10, ../sass/styles.scss */
+h2 {
+  font-size: 18px;
+  color: #333;
+}
+
+/* line 11, ../sass/styles.scss */
+ul {
+  list-style: none;
+}
+
+/* line 12, ../sass/styles.scss */
+.indent {
+  margin: 0 90px 10px 30px;
+}
+
+/* line 13, ../sass/styles.scss */
+p {
+  margin: 15px 0;
+}
+
+/* line 15, ../sass/styles.scss */
+.bottom-half {
+  margin: 20px 0 0 0;
+}
+
+/* line 19, ../sass/styles.scss */
+.logo_house {
+  width: 100%;
+  height: 228px;
+}
+
+/* line 24, ../sass/styles.scss */
+.logo {
+  margin: 28px 0 0 94px;
+  background: transparent url("/public/img/logo.png") no-repeat;
+  width: 100%;
+  height: 200px;
+  position: relative;
+  z-index: -10;
+}
+
+/* line 33, ../sass/styles.scss */
+#makeMeScrollable {
+  width: 100%;
+  height: 330px;
+  position: relative;
+}
+
+/* line 37, ../sass/styles.scss */
+#makeMeScrollable div.scrollableArea img {
+  position: relative;
+  float: left;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 41, ../sass/styles.scss */
+.signup {
+  margin: 24px;
+  float: right;
+}
+
+/* line 46, ../sass/styles.scss */
+.slideshow {
+  width: 500px;
+  float: left;
+}
+
+/* line 50, ../sass/styles.scss */
+.tagline {
+  margin: 0 0 0 326px;
+  bottom: 0;
+  letter-spacing: 1px;
+  position: absolute;
+  font-style: italic;
+  font-size: 18px;
+}
+
+/* line 59, ../sass/styles.scss */
+.text-content {
+  width: 275px;
+  height: 300px;
+  float: left;
+  padding: 8px;
+}
+
+/* line 62, ../sass/styles.scss */
+.text-content-2 {
+  width: 800px;
+  height: 100%;
+  float: left;
+}
+
+/* line 67, ../sass/styles.scss */
+.text-content p {
+  color: #555;
+}
+
+/* line 71, ../sass/styles.scss */
+.upper {
+  border-bottomx: 1px solid black;
+  height: 42px;
+  width: 100%;
+}
+
+/* line 77, ../sass/styles.scss */
+.wrap {
+  margin: 0 auto;
+  width: 800px;
+}
+
+/* line 82, ../sass/styles.scss */
+#logout_link {
+  font-size: 10px;
+}
+
+/* line 86, ../sass/styles.scss */
+#loginAndRegistration {
+  width: 300px;
+}
+
+/* line 90, ../sass/styles.scss */
+form.bubbleform p {
+  position: relative;
+  margin: 0px;
+}
+
+/* line 95, ../sass/styles.scss */
+form.bubbleform .errorlist, .error {
+  font-size: 12px;
+  color: red;
+}
+
+/* Position the labels inside our input fields. */
+/* line 101, ../sass/styles.scss */
+form.bubbleform label {
+  position: absolute;
+  top: 5px;
+  left: 9px;
+  color: #aaa;
+}
+
+/* line 108, ../sass/styles.scss */
+form.bubbleform input {
+  width: 280px;
+  padding: 5px;
+  margin-bottom: 10px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+  border-radius: 15px;
+}
+
+/* --- viewport configuration ---------------------------------------------------------- */
+/* line 117, ../sass/styles.scss */
+.viewport {
+  borderx: 3px solid #eee;
+  float: left;
+  height: 150px;
+  margin: 0 4.5px 9px 4.5px;
+  overflow: hidden;
+  position: relative;
+  width: 250px;
+}
+
+/* This is so that the 2nd thumbnail in each row fits snugly. You will want to add a similar
+   class to the last thumbnail in each row to get rid of the margin-right. */
+/* line 129, ../sass/styles.scss */
+.no-margin {
+  margin-right: 0;
+}
+
+/* line 133, ../sass/styles.scss */
+.marginleft {
+  margin-left: 9px;
+}
+
+/* --- Link configuration that contains the image and label ----------------------------- */
+/* line 138, ../sass/styles.scss */
+.viewport a {
+  display: block;
+  position: relative;
+}
+
+/* line 143, ../sass/styles.scss */
+.viewport a img {
+  left: -0;
+  position: relative;
+  top: -0;
+  width: 250px;
+  height: 150px;
+}
+
+/* --- Label configuration -------------------------------------------------------------- */
+/* line 152, ../sass/styles.scss */
+.viewport a span {
+  display: none;
+  font-size: .8em;
+  height: 100%;
+  padding-top: 65px;
+  position: absolute;
+  text-align: center;
+  text-decoration: none;
+  width: 100%;
+  z-index: 100;
+}
+
+/* line 163, ../sass/styles.scss */
+.viewport a span em {
+  display: block;
+  font-size: 0.45em;
+  font-weight: normal;
+}
+
+/* --- Dark hover background ------------------------------------------------------------ */
+/* line 170, ../sass/styles.scss */
+.dark-background {
+  background-color: rgba(15, 15, 15, 0.6);
+  color: #fff;
+  text-shadow: #000 0px 0px 0px;
+}
+
+/* line 175, ../sass/styles.scss */
+.dark-background em {
+  color: #ccc;
+}
+
+/**
+ * You could create multiple hover background classes for different looks depending on the
+ * image type. Use your imagination!
+ */
+/* line 188, ../sass/styles.scss */
+ul.sub_menu li a[href='#'] {
+  color: red;
+}
+/* line 192, ../sass/styles.scss */
+ul.sub_menu li:hover {
+  font-weight: bold;
+}
+
+/* line 198, ../sass/styles.scss */
+ul.dropdown ul li a[href='#'] {
+  color: #ccc;
+}

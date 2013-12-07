@@ -7,3 +7,4 @@ django_fsm
 django-compressor==0.9.2
 dj_database_url
 gunicorn
+dj-static

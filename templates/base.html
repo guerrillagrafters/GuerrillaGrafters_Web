@@ -8,22 +8,22 @@
 
   <link rel="stylesheet" href="{{ STATIC_URL }}bootstrap/css/bootstrap.css">
 
-  <link rel="stylesheet" type="text/css" href="/public/assets/stylesheets/styles.css" charset="utf-8" media="only screen and (min-width: 481px)" />
-  <link rel="stylesheet" type="text/css" href="/public/css/reset.css" media="screen" />
-  <link rel="stylesheet" type="text/css" href="/public/css/menu_style.css" media="screen, projection"/>
+  <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}assets/stylesheets/styles.css" charset="utf-8" media="only screen and (min-width: 481px)" />
+  <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/reset.css" media="screen" />
+  <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/menu_style.css" media="screen, projection"/>
 
   <!-- the CSS for Smooth Div Scroll -->
-	<link rel="Stylesheet" type="text/css" href="/public/css/smoothDivScroll.css" />
-	<link rel="Stylesheet" type="text/css" href="/public/css/reveal.css" />
+	<link rel="Stylesheet" type="text/css" href="{{ STATIC_URL }}css/smoothDivScroll.css" />
+	<link rel="Stylesheet" type="text/css" href="{{ STATIC_URL }}css/reveal.css" />
   <!--[if lte IE 7]>
-    <link rel="stylesheet" type="text/css" href="/public/css/menu_ie.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/menu_ie.css" media="screen" />
   <![endif]-->
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js" type="text/javascript"></script>
-	<script src="/public/js/jquery.ui.widget.js" type="text/javascript"></script>
-	<script src="/public/js/jquery.reveal.js" type="text/javascript"></script>
-	<script src="/public/js/jquery.form.js" type="text/javascript"></script>
-	<script src="/public/js/main.js" type="text/javascript"></script>
+	<script src="{{ STATIC_URL }}js/jquery.ui.widget.js" type="text/javascript"></script>
+	<script src="{{ STATIC_URL }}js/jquery.reveal.js" type="text/javascript"></script>
+	<script src="{{ STATIC_URL }}js/jquery.form.js" type="text/javascript"></script>
+	<script src="{{ STATIC_URL }}js/main.js" type="text/javascript"></script>
 
   {% block headtags %}{% endblock %}
 </head>
