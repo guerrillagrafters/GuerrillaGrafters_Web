@@ -1,5 +1,7 @@
 import os, sys
 import django
+from os import environ
+from urlparse import urlparse
 
 DJANGO_ROOT = os.path.dirname(os.path.realpath(django.__file__))
 SITE_ROOT = os.path.dirname(os.path.realpath(__file__))
@@ -13,16 +15,16 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
-DATABASES = {
-  'default': {
-     'ENGINE': 'django.contrib.gis.db.backends.postgis',
-     'NAME': 'guerrilla_grafters',
-     'USER': 'guerrilla_grafters',
-     'PASSWORD': 'password',
-     'HOST': 'localhost',
-     'PORT': '5432',
-  }
-}
+if environ.has_key('DATABASE_URL'):
+    url = urlparse(environ['DATABASE_URL'])
+    DATABASES['default'] = {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': url.path[1:],
+        'USER': url.username,
+        'PASSWORD': url.password,
+        'HOST': url.hostname,
+        'PORT': url.port,
+    }
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
